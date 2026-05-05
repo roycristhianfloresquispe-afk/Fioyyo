@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roy ❤️ Fiorella</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: rgba(255,255,255,0.3);
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 40px 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h1 {
+      color: white;
+      font-size: 3em;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 650px;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+      padding: 10px;
+    }
+
+    .foto {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      transform: rotate(-2deg);
+      transition: transform 0.3s, scale 0.3s;
+      overflow: hidden;
+    }
+
+    .foto:nth-child(even) {
+      transform: rotate(2deg);
+    }
+
+    .foto:hover {
+      transform: scale(1.05) rotate(0deg);
+    }
+
+    .foto img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+      display: block;
+    }
+
+    .especial {
+      margin-top: 30px;
+    }
+
+    .marco-especial {
+      display: inline-block;
+      padding: 15px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 0, 100, 0.6);
+      animation: brillo 2s infinite alternate;
+    }
+
+    .marco-especial img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 15px;
+    }
+
+    @keyframes brillo {
+      from { box-shadow: 0 0 15px rgba(255,0,100,0.5); }
+      to { box-shadow: 0 0 35px rgba(255,0,150,1); }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+    }
+
+    .corazon {
+      position: fixed;
+      color: red;
+      animation: caer 5s linear infinite;
+    }
+
+    @keyframes caer {
+      0% { transform: translateY(-10vh); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<audio id="musica" loop>
+  <source src="imagenes/Amor de Vago.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener('click', function() {
+  document.getElementById('musica').play();
+}, { once: true });
+</script>
+
+<nav>
+  <a onclick="mostrar('inicio')">Inicio</a>
+  <a onclick="mostrar('frases')">Frases</a>
+  <a onclick="mostrar('galeria')">Galería</a>
+  <a onclick="mostrar('especial')">Foto especial</a>
+  <a onclick="mostrar('carta')">Carta</a>
+</nav>
+
+<section id="inicio" class="active">
+  <h1>Roy ❤️ Fiorella</h1>
+  <div class="card">
+    <p>05/05/2026 - 8 meses juntos 💖</p>
+    <p>Eres lo mejor que me ha pasado en toda mi vida.</p>
+    <button onclick="alert('Te amo muchísimo Fiorella ❤️')">Haz clic 💕</button>
+  </div>
+</section>
+
+<section id="frases">
+  <h1>Frases 💌</h1>
+  <div class="card">
+    <p>"Eres mi lugar favorito"</p>
+    <p>"Contigo no necesito nada mas"</p>
+    <p>"Quiero todos mis días contigo"</p>
+    <p>"Eres mi felicidad, mi corazon late tanto"</p>
+    <p>"No necesito nada más si estás tú"</p>
+  </div>
+</section>
+
+<section id="galeria">
+  <h1>Nuestras fotos 📸</h1>
+  <div class="galeria">
+
+      <div class="foto"><img src="imagenes/1.jpeg"></div>
+      <div class="foto"><img src="imagenes/2.jpeg"></div>
+      <div class="foto"><img src="imagenes/3.jpeg"></div>
+      <div class="foto"><img src="imagenes/4.jpeg"></div>
+      <div class="foto"><img src="imagenes/5.jpeg"></div>
+      <div class="foto"><img src="imagenes/6.jpeg"></div>
+      <div class="foto"><img src="imagenes/7.jpeg"></div>
+      <div class="foto"><img src="imagenes/8.jpeg"></div>
+      <div class="foto"><img src="imagenes/9.jpeg"></div>
+
+  </div>
+</section>
+
+<section id="especial">
+  <h1>Foto especial 💖</h1>
+  <div class="especial">
+    <div class="marco-especial">
+      <img src="imagenes/10.jpeg">
+    </div>
+    <p style="color:white; margin-top:15px;">NOSOTROSSSSSSSSS JOVENNNNN ❤️</p>
+  </div>
+</section>
+
+<section id="carta">
+  <h1>Para ti 💖</h1>
+  <div class="card">
+    <p>Fiorella,</p>
+    <p>Chiuchi gracias por seguir a mi lado estos 8 meses.</p>
+    <p>Cada momento contigo es especial.</p>
+    <p>Te prometo por mi y por ti y nuestra relacion que te are feliz.</p>
+    <p>Te amo con todo mi corazón grasoso ❤️</p>
+  </div>
+</section>
+
+<script>
+function mostrar(id) {
+  document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+setInterval(() => {
+  const corazon = document.createElement('div');
+  corazon.classList.add('corazon');
+  corazon.innerHTML = '❤️';
+  corazon.style.left = Math.random() * 100 + 'vw';
+  corazon.style.fontSize = Math.random() * 20 + 10 + 'px';
+  document.body.appendChild(corazon);
+  setTimeout(() => corazon.remove(), 5000);
+}, 300);
+</script>
+
+</body>
+</html>
